@@ -19,7 +19,7 @@ public class DishMapper {
     }
 
     public String toString(Dish dish) {
-        return  dish.getName() +
+        return  "\n" + dish.getName() +
                 "," +
                 dish.getCalories() +
                 "," +
@@ -42,6 +42,7 @@ public class DishMapper {
     public List<Dish> toDishList(List<String> strings) {
         return new ArrayList<>(
                 strings.stream()
+                        .filter(item -> !item.equals(""))
                         .map(this::toDish)
                         .collect(Collectors.toList())
         );

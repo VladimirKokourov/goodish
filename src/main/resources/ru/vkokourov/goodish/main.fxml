@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vkokourov.goodish.Controller">
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vkokourov.goodish.controller.MainController">
     <MenuBar>
         <Menu text="Файл">
             <MenuItem onAction="#btnExitAction" text="Выйти из программы" />
@@ -63,10 +63,36 @@
         </VBox>
     </HBox>
     <TableView fx:id="dishTable" VBox.vgrow="ALWAYS" />
+    <VBox fx:id="addDishPanel" visible="false" managed="false">
+        <HBox>
+            <Label text="Название"/>
+            <TextField fx:id="nameTextField"/>
+        </HBox>
+        <HBox>
+            <Label text="Калории"/>
+            <TextField fx:id="caloriesTextField"/>
+        </HBox>
+        <HBox>
+            <Label text="Протеины"/>
+            <TextField fx:id="proteinsTextField"/>
+        </HBox>
+        <HBox>
+            <Label text="Жиры"/>
+            <TextField fx:id="fatsTextField"/>
+        </HBox>
+        <HBox>
+            <Label text="Углеводы"/>
+            <TextField fx:id="carbsTextField"/>
+        </HBox>
+        <HBox>
+            <Button fx:id="btnSaveDish" onAction="#btnSaveDish" text="Сохранить"/>
+            <Button fx:id="btnExitDish" onAction="#btnCancelDish" text="Отмена"/>
+        </HBox>
+    </VBox>
     <HBox spacing="5">
-        <Button focusTraversable="false" maxWidth="Infinity" text="Добавить блюдо" HBox.hgrow="ALWAYS"/>
-        <Button focusTraversable="false" maxWidth="Infinity" text="Изменить блюдо" HBox.hgrow="ALWAYS" />
-        <Button focusTraversable="false" maxWidth="Infinity" text="Удалить блюдо" HBox.hgrow="ALWAYS" />
+        <Button fx:id="btnAddDish" focusTraversable="false" maxWidth="Infinity" text="Добавить блюдо" HBox.hgrow="ALWAYS" onAction="#clickBtnAddDish"/>
+        <Button focusTraversable="false" maxWidth="Infinity" text="Изменить блюдо" HBox.hgrow="ALWAYS" onAction="#clickBtnEditDish"/>
+        <Button focusTraversable="false" maxWidth="Infinity" text="Удалить блюдо" HBox.hgrow="ALWAYS" onAction="#clickBtnDeleteDish"/>
         <Button focusTraversable="false" maxWidth="Infinity" onAction="#btnExitAction" text="Выход из программы" HBox.hgrow="ALWAYS" />
         <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
