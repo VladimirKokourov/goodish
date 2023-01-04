@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.vkokourov.goodish.Controller">
+    <MenuBar>
+        <Menu text="Файл">
+            <MenuItem onAction="#btnExitAction" text="Выйти из программы" />
+        </Menu>
+    </MenuBar>
+    <HBox>
+        <VBox>
+            <Label text="Меню:">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding></Label>
+            <ListView fx:id="dishList" maxHeight="75" />
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </VBox>
+        <VBox>
+            <Label text="Осталось калорий:">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding></Label>
+            <TextField fx:id="caloriesBalanceField" />
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </VBox>
+        <VBox>
+            <Label text="Осталось белков:">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding></Label>
+            <TextField fx:id="proteinsBalanceField" />
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </VBox>
+        <VBox>
+            <Label text="Осталось жиров:">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding></Label>
+            <TextField fx:id="fatsBalanceField" />
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </VBox>
+        <VBox>
+            <Label text="Осталось углеводов:">
+            <padding>
+               <Insets bottom="5.0" />
+            </padding></Label>
+            <TextField fx:id="carbsBalanceField" />
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+        </VBox>
+    </HBox>
+    <TableView fx:id="dishTable" VBox.vgrow="ALWAYS" />
+    <HBox spacing="5">
+        <Button focusTraversable="false" maxWidth="Infinity" text="Добавить блюдо" HBox.hgrow="ALWAYS"/>
+        <Button focusTraversable="false" maxWidth="Infinity" text="Изменить блюдо" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" text="Удалить блюдо" HBox.hgrow="ALWAYS" />
+        <Button focusTraversable="false" maxWidth="Infinity" onAction="#btnExitAction" text="Выход из программы" HBox.hgrow="ALWAYS" />
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+    </HBox>
+</VBox>
